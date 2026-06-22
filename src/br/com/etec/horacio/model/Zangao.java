@@ -1,6 +1,8 @@
-package br.com.etec.horacio;
+package br.com.etec.horacio.model;
 
-public class Zangao extends Abelha {
+import br.com.etec.horacio.interfaces.Defensor;
+
+public class Zangao extends Abelha implements Defensor {
     private int vooParaAcasalamento;
 
     public Zangao(String nome, int idadeDias, int vooParaAcasalamento) {
@@ -8,10 +10,10 @@ public class Zangao extends Abelha {
         this.vooParaAcasalamento = vooParaAcasalamento;
     }
 
-
     @Override
     public void executarAtividadePrincipal() {
         System.out.println("Atividade Realizando " + vooParaAcasalamento + " voos através acasalamento.");
+        defenderColmeia();
     }
 
     @Override
@@ -19,6 +21,10 @@ public class Zangao extends Abelha {
         return 0;
     }
 
+    @Override
+    public void defenderColmeia() {
+        System.out.println("Defendendo a colmeia de invasores");
+    }
 
     public double calcularConsumoAlimentar() {
         return 15.0 + (vooParaAcasalamento * 3.0);

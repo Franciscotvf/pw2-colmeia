@@ -1,4 +1,4 @@
-package br.com.etec.horacio;
+package br.com.etec.horacio.model;
 
 public class AbelhaRainha extends Abelha {
     private int qtdOvos;
